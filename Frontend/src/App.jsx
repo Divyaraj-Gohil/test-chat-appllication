@@ -16,11 +16,11 @@ const router = createHashRouter([
     element: <HomePage />
   },
   {
-    path: '/',
+    path: '/signup',
     element: <Signup />
   },
   {
-    path: '/login',
+    path: '/',
     element: <Login />
   }
 ])
@@ -51,7 +51,7 @@ function App() {
     }
   }, [authUser])
   return (
-    <div className='h-screen flex md:items-center justify-center p-4'>
+    <div className='h-screen flex md:items-center justify-center py-4 md:p-4'>
       <RouterProvider router={router} />
       <ToastContainer position="top-right" />
     </div>

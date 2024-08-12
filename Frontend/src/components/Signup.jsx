@@ -43,7 +43,7 @@ const Signup = () => {
         }
     }
     return (
-        <div className='min-w-96 mx-auto rounded-2xl shadow-2xl bg-[#efeeee]'>
+        <div className='min-w-96 mx-auto h-[500px] md:h-auto rounded-2xl shadow-2xl bg-[#efeeee]'>
             <div className='w-full p-6'>
                 <form onSubmit={submitHandller}>
                     <h1 className='text-center tracking-widest font-bold mb-4'>Create Acoount</h1>
@@ -90,7 +90,7 @@ const Signup = () => {
                     </div>
                     <div className='flex justify-center gap-2'>
                         <p className='font-light'>Already have an Account? </p>
-                        <Link to="/login" className='text-blue-700'>Login</Link>
+                        <Link to="/" className='text-blue-700'>Login</Link>
                     </div>
                 </form>
             </div>

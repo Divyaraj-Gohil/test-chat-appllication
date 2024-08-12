@@ -31,7 +31,7 @@ function MessageContainer() {
         }
     }
     return (
-        <div className='md:min-w-[550px] md:h-full h-[400px] flex flex-col bg-white'>
+        <div className=' md:min-w-[550px] md:h-full h-[500px] flex flex-col bg-white'>
             {
                 selectedUser ?
                     <>

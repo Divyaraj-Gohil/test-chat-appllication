@@ -29,7 +29,7 @@ function Sidebar() {
                 // dispatch(setOnlineUsers())
                 localStorage.removeItem('authUser')
                 toast.info('Logged out...')
-                navigate('/login')
+                navigate('/')
             }
         } catch (error) {
             console.log(error)
@@ -61,16 +61,16 @@ function Sidebar() {
     }
 
     return (
-        <div className='border-r md:h-full h-[250px] bg-white border-stone-300 p-4 flex flex-col'>
-            <form className='flex items-center relative'>
-                <input className='input input-bordered rounded-lg'
+        <div className='border-r md:w-auto w-screen  md:h-full h-[260px] bg-white border-stone-300 mp-4 flex flex-col'>
+            <form className='flex items-center justify-center md:justify-normal relative'>
+                <input className='input input-bordered mt-3 rounded-lg'
                     onChange={handleInputChange}
                     value={searchQuery}
                     placeholder='search...' type="text" />
-                <button disabled className='h-15 w-10 absolute inset-y-0 end-0 items-center'><img src={search} alt="" /></button>
+                <button disabled className='hidden md:block md:h-15 md:w-10 md:absolute md:inset-y-0 md:end-0 md:items-center'><img src={search} alt="" /></button>
             </form>
             {suggestions !== '' &&
-                <ul className='my-1 px-5 rounded-md bg-slate-200 cursor-pointer w-full h-16 overflow-auto'>
+                <ul className='my-1 px-5 rounded-md bg-slate-200 cursor-pointer w-full h-36 md:h-16 overflow-auto'>
                     {suggestions.map(user => (
                         <li onClick={() => suggestUser(user.username)} key={user.id}>{user.username}</li>
                     ))}
