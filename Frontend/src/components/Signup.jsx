@@ -25,7 +25,7 @@ const Signup = () => {
             })
             if (res.data) {
                 toast.success('User registered successfully!')
-                navigate('/login')
+                navigate('/')
             }
         } catch (error) {
             console.error(error)
