@@ -9,8 +9,8 @@ const getOtherUsers = () => {
     useEffect(() => {
         const fetchOtherUsers = async () => {
             try {
-                const res = await api.get('https://chat-app-oymd.onrender.com/api/v1/user/getOtherUser')
-                dispatch(setOtherUsers(res.data))
+                const res = await api.get('/user/getOtherUser')
+                if (res) dispatch(setOtherUsers(res.data))
             } catch (error) {
                 console.log(error)
             }

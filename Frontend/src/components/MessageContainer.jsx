@@ -3,6 +3,7 @@ import send from '../Asset/send.png'
 import Messages from './Messages'
 import { useSelector, useDispatch } from 'react-redux'
 import axios from 'axios'
+import api from '../api'
 import { setMessages } from '../store/slices/messageSlice'
 import OtherUser from './User'
 
@@ -13,14 +14,12 @@ function MessageContainer() {
     const [message, setmessage] = useState('')
     const handlesubmit = async (e) => {
         try {
-            axios.defaults.withCredentials = true;
-            const res = await axios.post(`https://chat-app-oymd.onrender.com/api/v1/message/send/${selectedUser?._id}`, { message }, {
+            const res = await api.post(`/message/send/${selectedUser?._id}`, { message }, {
                 headers: {
                     "Content-Type": 'application/json'
                 },
-                withCredentials: true
             })
-            dispatch(setMessages([...messages, res.data.newmessage]))
+            if (res) dispatch(setMessages([...messages, res.data.newmessage]))
         } catch (error) {
             console.log(error)
         }

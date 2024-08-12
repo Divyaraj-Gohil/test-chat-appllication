@@ -22,7 +22,6 @@ function Sidebar() {
                 headers: {
                     'content-Type': 'application/json',
                 },
-                withCredentials: true,
             })
             if (res) {
                 dispatch(setSelectedUser(null))

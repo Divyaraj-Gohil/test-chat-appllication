@@ -19,9 +19,9 @@ const Login = () => {
                 headers: {
                     "Content-Type": 'application/json'
                 },
-                withCredentials: true,
             })
             if (res.data) {
+                console.log(res.data)
                 dispatch(setAuthUser(res.data))
                 localStorage.setItem('authUser', JSON.stringify(res.data))
                 toast.success('Login successfully!')

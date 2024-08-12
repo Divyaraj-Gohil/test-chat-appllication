@@ -1,4 +1,5 @@
 import axios from 'axios'
+import api from '../api'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setMessages } from '../store/slices/messageSlice'
@@ -11,12 +12,11 @@ const getmessages = () => {
         const fetchMessages = async () => {
             try {
                 if (selectedUser) {
-                    axios.defaults.withCredentials = true;
-                    const res = await axios.get(`https://chat-app-oymd.onrender.com/api/v1/message/${selectedUser?._id}`, {
+                    // axios.defaults.withCredentials = true;
+                    const res = await api.get(`/message/${selectedUser?._id}`, {
                         headers: {
                             'content-Type': 'application/json',
                         },
-                        withCredentials: true,
                     })
                     dispatch(setMessages(res.data))
                 }
