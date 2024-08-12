@@ -32,7 +32,7 @@ export const login = async (req, res, next) => {
         const compare = await user.comparepass(password)
         if (!compare) return next('Incorrect username or password')
         const token = await user.createJWT()
-        console.log(token)
+        //console.log(token)
         //cookie("token", token, { maxAge: 1 * 24 * 60 * 60 * 1000, httpOnly: true, sameSite: 'strict' })
         return res.status(200).json({
             id: user._id,
