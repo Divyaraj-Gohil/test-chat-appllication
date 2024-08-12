@@ -15,13 +15,13 @@ const Login = () => {
     const submitHandller = async (e) => {
         e.preventDefault()
         try {
-            const res = await axios.post('https://chat-app-oymd.onrender.com/api/v1/user/login', user, {
+            const res = await axios.post('https://temp-7grl.onrender.com/api/v1/user/login', user, {
                 headers: {
                     "Content-Type": 'application/json'
                 },
             })
             if (res.data) {
-                console.log(res.data)
+                //console.log(res.data)
                 dispatch(setAuthUser(res.data))
                 localStorage.setItem('authUser', JSON.stringify(res.data))
                 toast.success('Login successfully!')
