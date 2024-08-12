@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'chat': "url('/src/Asset/chat.jpg')",
+        'chat': "url('https://i.pinimg.com/474x/85/70/f6/8570f6339d3189c96e340d47a581d3b8.jpg')",
       },
     },
   },
